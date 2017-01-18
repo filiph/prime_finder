@@ -32,7 +32,7 @@ class PrimeFinder {
 
   findPrimes() async {
     var alreadyComputedPrimes =
-        _primes.where((prime) => prime >= _current && prime < _maxReached);
+        _primes.where((prime) => prime > _current && prime <= _maxReached);
     var complying = alreadyComputedPrimes.where(complies);
     for (var number in complying) {
       _sendPort.send({"type": "found", "value": number});
