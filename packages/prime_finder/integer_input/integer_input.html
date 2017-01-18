@@ -3,9 +3,10 @@
                 type="number"
                 floatingLabel
                 [error]="inputErrorMessage"
-                (keyup)="handleChange()"></material-input>
+                (keyup)="handleChange()"
+                [disabled]="isDisabled"></material-input>
 
-<material-fab
-                 (trigger)="delete()">
+<material-fab (trigger)="delete()"
+              [disabled]="isDisabled">
   <glyph icon="delete"></glyph>
 </material-fab>

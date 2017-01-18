@@ -51,10 +51,12 @@
       },
       "changeDetection": 6,
       "inputs": {
-        "pair": "pair"
+        "pair": "pair",
+        "isDisabled": "disabled"
       },
       "inputTypes": {
-        "pair": " IntegerPair"
+        "pair": " IntegerPair",
+        "isDisabled": " bool"
       },
       "outputs": {
         "deleted": "deleted"
@@ -67,7 +69,7 @@
       ],
       "template": {
         "encapsulation": 0,
-        "template": "<material-input #number\n                [label]=\"label\"\n                type=\"number\"\n                floatingLabel\n                [error]=\"inputErrorMessage\"\n                (keyup)=\"handleChange()\"></material-input>\n\n<material-fab\n                 (trigger)=\"delete()\">\n  <glyph icon=\"delete\"></glyph>\n</material-fab>\n",
+        "template": "<material-input #number\n                [label]=\"label\"\n                type=\"number\"\n                floatingLabel\n                [error]=\"inputErrorMessage\"\n                (keyup)=\"handleChange()\"\n                [disabled]=\"isDisabled\"></material-input>\n\n<material-fab (trigger)=\"delete()\"\n              [disabled]=\"isDisabled\">\n  <glyph icon=\"delete\"></glyph>\n</material-fab>\n",
         "templateUrl": "asset:prime_finder/lib/integer_input/integer_input.html",
         "styles": [],
         "styleUrls": [
