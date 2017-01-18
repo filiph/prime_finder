@@ -36,7 +36,7 @@ class AppComponent implements OnInit, OnDestroy {
 
   List<int> get previous {
     if (foundIntegers.length <= 1) return null;
-    return foundIntegers.skip(1).toList();
+    return foundIntegers.skip(1).toList(growable: false);
   }
 
   void addInput() {
