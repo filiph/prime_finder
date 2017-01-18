@@ -4,7 +4,7 @@
 
 Did you know that 2017 is a prime number?
 
-[![screenshot](//filiph.github.io/prime_finder/img/screenshot.png)](https://filiph.github.io/prime_finder/)
+[![screenshot](https://filiph.github.io/prime_finder/img/screenshot.png)](https://filiph.github.io/prime_finder/)
 
 ### [RUN THE APP](https://filiph.github.io/prime_finder/)
 
