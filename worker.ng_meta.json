@@ -1,0 +1,20 @@
+{
+  "ngDeps": null,
+  "type": {
+    "main": {
+      "class": "Identifier",
+      "name": "main",
+      "moduleUrl": "asset:webworker_isolate/web/worker.dart",
+      "prefix": null,
+      "value": null
+    },
+    "PrimeFinder": {
+      "class": "Identifier",
+      "name": "PrimeFinder",
+      "moduleUrl": "asset:webworker_isolate/web/worker.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
+}

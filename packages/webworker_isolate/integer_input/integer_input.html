@@ -1,0 +1,11 @@
+<material-input #number
+                [label]="label"
+                type="number"
+                floatingLabel
+                [error]="inputErrorMessage"
+                (keyup)="handleChange()"></material-input>
+
+<material-fab
+                 (trigger)="delete()">
+  <glyph icon="delete"></glyph>
+</material-fab>

@@ -1,0 +1,107 @@
+{
+  "ngDeps": {
+    "1": "",
+    "3": [
+      {
+        "1": "dart:async",
+        "5": false
+      },
+      {
+        "1": "package:angular2/core.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2_components/angular2_components.dart",
+        "5": false
+      },
+      {
+        "1": "package:webworker_isolate/app_component.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "IntegerInput",
+        "6": [
+          "OnInit"
+        ],
+        "7": [
+          {
+            "2": "materialDirectives"
+          }
+        ]
+      }
+    ],
+    "6": "integer_input.dart"
+  },
+  "type": {
+    "IntegerInput": {
+      "class": "Directive",
+      "isComponent": true,
+      "selector": "integer-input",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "IntegerInput",
+        "moduleUrl": "asset:webworker_isolate/lib/integer_input/integer_input.dart",
+        "prefix": null,
+        "isHost": false,
+        "value": null,
+        "diDeps": []
+      },
+      "changeDetection": 6,
+      "inputs": {
+        "pair": "pair"
+      },
+      "inputTypes": {
+        "pair": " IntegerPair"
+      },
+      "outputs": {
+        "deleted": "deleted"
+      },
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        0
+      ],
+      "template": {
+        "encapsulation": 0,
+        "template": "<material-input #number\n                [label]=\"label\"\n                type=\"number\"\n                floatingLabel\n                [error]=\"inputErrorMessage\"\n                (keyup)=\"handleChange()\"></material-input>\n\n<material-fab\n                 (trigger)=\"delete()\">\n  <glyph icon=\"delete\"></glyph>\n</material-fab>\n",
+        "templateUrl": "asset:webworker_isolate/lib/integer_input/integer_input.html",
+        "styles": [],
+        "styleUrls": [
+          "asset:webworker_isolate/lib/integer_input/integer_input.css"
+        ],
+        "ngContentSelectors": []
+      },
+      "providers": [
+        {
+          "class": "Identifier",
+          "name": "materialProviders",
+          "moduleUrl": null,
+          "prefix": null,
+          "value": null
+        }
+      ],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": [
+        {
+          "selectors": [
+            {
+              "value": "number",
+              "identifier": null,
+              "identifierIsInstance": false
+            }
+          ],
+          "descendants": true,
+          "first": true,
+          "propertyName": "inputEl",
+          "read": null
+        }
+      ]
+    }
+  },
+  "alias": {}
+}
