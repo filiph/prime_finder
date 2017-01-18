@@ -4,7 +4,7 @@
 import 'dart:async';
 import 'package:angular2/core.dart';
 import 'package:angular2_components/angular2_components.dart';
-import 'package:webworker_isolate/app_component.dart';
+import 'package:prime_finder/app_component.dart';
 
 @Component(
   selector: 'integer-input',

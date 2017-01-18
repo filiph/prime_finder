@@ -6,7 +6,7 @@ import 'dart:isolate';
 
 import 'package:angular2/core.dart';
 import 'package:angular2_components/angular2_components.dart';
-import 'package:webworker_isolate/integer_input/integer_input.dart';
+import 'package:prime_finder/integer_input/integer_input.dart';
 
 @Component(
   selector: 'my-app',
@@ -139,5 +139,6 @@ class IntegerPair {
   int value;
   IntegerPair(this.key, this.value);
 
+  @override
   String toString() => "IntegerPair<$key,$value>";
 }
