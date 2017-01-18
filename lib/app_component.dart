@@ -34,11 +34,6 @@ class AppComponent implements OnInit, OnDestroy {
 
   Queue<int> foundIntegers = new Queue<int>();
 
-  List<int> get previous {
-    if (foundIntegers.length <= 1) return null;
-    return foundIntegers.skip(1).toList();
-  }
-
   void addInput() {
     numbers.add(new IntegerPair(numbers.length + 1, 123));
   }
