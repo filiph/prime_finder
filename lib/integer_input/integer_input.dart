@@ -25,6 +25,9 @@ class IntegerInput implements OnInit {
   @Input()
   IntegerPair pair;
 
+  @Input('disabled')
+  bool isDisabled = false;
+
   String inputErrorMessage = '';
 
   String get label => "Number #${pair.key}";

@@ -102,6 +102,8 @@ class PrimeFinder {
           "value": _primes.last
         });
         return;
+      default:
+        throw new UnimplementedError(type);
     }
   }
 }

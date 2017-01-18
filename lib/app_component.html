@@ -9,13 +9,15 @@
             <div class="integer-inputs">
                 <integer-input *ngFor="let integerPair of numbers"
                                [pair]="integerPair"
-                               (deleted)="deleteByKey($event)">
+                               (deleted)="deleteByKey($event)"
+                               [disabled]="isolateComputing">
                 </integer-input>
             </div>
 
-            <material-button raised
-                             (trigger)="addInput()">
-                Add
+            <material-button
+                             (trigger)="addInput()"
+                             [disabled]="isolateComputing">
+                <glyph icon="add"></glyph> Add number
             </material-button>
         </div>
 
