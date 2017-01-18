@@ -21,4 +21,5 @@ The undocumented, hacked-together-in-one-evening code is [here](https://github.c
 If you want a minimal example of isolates, have a look at [dartlang-italia's samples repo](https://github.com/dartlang-italia/dart-libraries-samples/tree/master/isolate).
 
 — Filip Hracek, Jan 17, 2017  
-[Twitter](https://twitter.com/filiphracek), [G+](https://plus.google.com/+filiphracek)
+Discussions: [Hacker News](https://news.ycombinator.com/item?id=13424312), [Reddit](https://www.reddit.com/r/programming/comments/5onlwf/this_valentines_day_give_your_significant_other_a/), [Twitter](https://twitter.com/filiphracek/status/821593209843417088), [G+](https://plus.google.com/u/0/+filiphracek/posts/A1ABeaSogs8)  
+Profiles: [Twitter](https://twitter.com/filiphracek), [G+](https://plus.google.com/+filiphracek)
