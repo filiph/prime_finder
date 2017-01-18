@@ -1,0 +1,68 @@
+<!--<h1>Find primes that include the following numbers</h1>-->
+
+<div class="main">
+
+    <div class="panel">
+        <h2>Inputs</h2>
+
+        <div class="section">
+            <div class="integer-inputs">
+                <integer-input *ngFor="let integerPair of numbers"
+                               [pair]="integerPair"
+                               (deleted)="deleteByKey($event)">
+                </integer-input>
+            </div>
+
+            <material-button raised
+                             (trigger)="addInput()">
+                Add
+            </material-button>
+        </div>
+
+        <div class="section">
+            <material-button raised
+                             [disabled]="!isolateReady"
+                             (trigger)="compute()"
+                             class="red">
+                Compute next
+            </material-button>
+
+            <material-button
+                [disabled]="!isolateComputing"
+                (trigger)="forceStop()">
+                Force stop
+            </material-button>
+
+        </div>
+    </div>
+
+    <div class="panel">
+        <h2>Output</h2>
+
+        <p *ngIf="!isolateComputing && foundIntegers.isEmpty">
+            Nothing here yet. Try computing a prime number.
+        </p>
+
+        <div class="section">
+
+            <h1>
+                <span class="red-span" *ngIf="!isolateComputing && foundIntegers.isNotEmpty">
+                    {{ foundIntegers.first }}
+                </span>
+                <span class="gray-span" *ngIf="isolateComputing">
+                    {{lastResult ?? '0'}}
+                    <material-spinner *ngIf="isolateComputing"></material-spinner>
+                </span>
+            </h1>
+
+            <!--<h3 *ngIf="previous != null">Previous</h3>-->
+
+            <ul>
+                <li *ngFor="let item of previous">
+                    {{item}}
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

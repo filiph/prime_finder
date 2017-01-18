@@ -1,0 +1,49 @@
+:host {
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel {
+  margin-right: 3em;
+  min-width: 200px;
+}
+
+.panel p {
+  max-width: 200px;
+}
+
+.section {
+  margin-bottom: 2em;
+}
+
+.integer-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 200px;
+}
+
+@media all and (max-width: 600px) {
+  .integer-inputs {
+    max-width: 100%;
+  }
+}
+
+.red {
+  background-color: #f44336;
+  color: white;
+}
+
+.gray-span {
+  color: lightgray;
+}
+
+.red-span {
+  color: #f44336;
+}
+
+material-spinner {
+  border-color: #f44336;
+}

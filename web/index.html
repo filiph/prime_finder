@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This valentine’s day, give a gift of a prime number</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+      body {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 5vw;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+      }
+
+      p {
+        line-height: 150%;
+      }
+
+      my-app img {
+        margin-left: -20px;
+        max-width: 100%;
+      }
+
+      .right {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      This valentine’s day,<br>
+      give a gift of a prime number
+    </h1>
+
+    <p>Did you know that 2017 is a prime number?</p>
+
+    <my-app>
+      <img src="img/isolate-blurred.jpg">
+      <!-- TODO: Add blurred preview -->
+    </my-app>
+
+    <h2 id="origin_story">Origin story</h2>
+
+    <p>I once gave my wife a prime number. It contains digits from my birthday, her birthday, and the date of our wedding. And it is a prime number, so — you know — it&#8217;s indivisible.</p>
+
+    <p>She said it was romantic. I&#8217;m sure she meant it, although, looking back, I think she could have just as well said I was a total nerd. Or a cheapo. Or both.</p>
+
+    <p>Anyways, I remembered about this whole thing today when playing around with <a href="https://api.dartlang.org/stable/1.21.1/dart-isolate/dart-isolate-library.html">Isolates</a>. I needed a long-running computation to run so that I could test that it doesn&#8217;t block the main (UI) thread when running in an Isolate. I knew this was okay on Dart VM (which uses good old threads) but I was only half-sure it also worked on the web. And because <a href="https://twitter.com/sur3shg/status/821304340715405312">someone asked</a>, I just had to figure it out. </p>
+
+    <p>As you can hopefully see, Isolates do work on the web. You should be able to execute searches for your loved ones’ birtdates, important anniversaries and whatnot, and the main thread shouldn&#8217;t drop a single frame. Isolates on the web are implemented using WebWorkers, so they spawn in a parallel thread. The only exception is very old browsers that don&#8217;t support WebWorkers. The app should still work, theoretically, but it will be halting to a stop when computing.</p>
+
+    <h2 id="code">Code</h2>
+
+    <p>The undocumented, hacked-together-in-one-evening code is here. A real app would at least build a simple helper for the message passing between the main isolate and the worker. So, not this. worker.dart is the WebWorker isolate. Nice thing about it is that it would work just as well in DartVM &#8212; so I could make a command line app or a mobile app without touching this file. app_component.dart is the main part of the user-facing app.</p>
+
+    <p>If you want a minimal example of isolates, have a look at <a href="https://github.com/dartlang-italia/dart-libraries-samples/tree/master/isolate">dartlang-italia&#8217;s samples repo</a>.</p>
+
+    <p class="right">— Filip Hracek, Jan 17, 2017</p>
+
+  </body>
+</html>
