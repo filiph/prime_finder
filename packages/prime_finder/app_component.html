@@ -58,10 +58,7 @@
             </h1>
 
             <ul>
-                <li *ngIf="isolateComputing && foundIntegers.isNotEmpty">
-                    {{ foundIntegers.first }}
-                </li>
-                <li *ngFor="let item of previous">
+                <li *ngFor="let item of foundIntegers">
                     {{ item }}
                 </li>
             </ul>
