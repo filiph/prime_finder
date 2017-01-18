@@ -1,8 +1,8 @@
-# This valentine’s day, give a gift of a prime number
+# [Run app here](https://filiph.github.io/prime_finder/)
+
+## This valentine’s day, give a gift of a prime number
 
 Did you know that 2017 is a prime number?
-
----
 
 ## Origin story
 
@@ -16,8 +16,9 @@ As you can hopefully see, Isolates do work on the web. You should be able to exe
 
 ## Code
 
-The undocumented, hacked-together-in-one-evening code is here. A real app would at least build a simple helper for the message passing between the main isolate and the worker. So, not this. worker.dart is the WebWorker isolate. Nice thing about it is that it would work just as well in DartVM -- so I could make a command line app or a mobile app without touching this file. app_component.dart is the main part of the user-facing app.
+The undocumented, hacked-together-in-one-evening code is [here](https://github.com/filiph/prime_finder). A real app would at least build a simple helper for the message passing between the main isolate and the worker. So, not this. [worker.dart](https://github.com/filiph/prime_finder/blob/master/web/worker.dart) is the WebWorker isolate. Nice thing about it is that it would work just as well in DartVM -- so I could make a command line app or a [iOS/Android mobile app](https://flutter.io/) without touching this file. [app_component](https://github.com/filiph/prime_finder/tree/master/lib) is the main part of the user-facing [AngularDart](https://webdev.dartlang.org/angular) app.
 
 If you want a minimal example of isolates, have a look at [dartlang-italia's samples repo](https://github.com/dartlang-italia/dart-libraries-samples/tree/master/isolate).
 
-— Filip Hracek, Jan 17, 2017
+— Filip Hracek, Jan 17, 2017  
+[Twitter](https://twitter.com/filiphracek), [G+](https://plus.google.com/+filiphracek)
