@@ -57,7 +57,6 @@ class AppComponent implements OnInit, OnDestroy {
   }
 
   void deleteByKey(int key) {
-    print("deleting $key");
     numbers.removeWhere((pair) => pair.key == key);
     recomputeKeys();
   }

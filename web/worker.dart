@@ -31,14 +31,18 @@ class PrimeFinder {
   }
 
   findPrimes() async {
-    var alreadyComputedPrimes =
-        _primes.where((prime) => prime > _current && prime <= _maxReached);
-    var complying = alreadyComputedPrimes.where(complies);
-    for (var number in complying) {
-      _sendPort.send({"type": "found", "value": number});
-      _sendPort.send({"type": "done"});
-      _current = number + 1;
-      return;
+    if (_current < _maxReached) {
+      // We have primes already computed here, let's just find if they comply
+      // to the new targets.
+      var alreadyComputedPrimes =
+      _primes.where((prime) => prime >= _current && prime <= _maxReached);
+      var complying = alreadyComputedPrimes.where(complies);
+      for (var number in complying) {
+        _sendPort.send({"type": "found", "value": number});
+        _sendPort.send({"type": "done"});
+        _current = number + 1;
+        return;
+      }
     }
 
     for (int i = _maxReached; max != null ? i <= max : true; i++) {
