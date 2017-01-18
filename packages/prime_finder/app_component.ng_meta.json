@@ -3,7 +3,11 @@
     "1": "",
     "3": [
       {
-        "1": "dart:async",
+        "1": "dart:collection",
+        "5": false
+      },
+      {
+        "1": "dart:isolate",
         "5": false
       },
       {
@@ -15,24 +19,28 @@
         "5": false
       },
       {
-        "1": "package:webworker_isolate/app_component.dart",
+        "1": "package:prime_finder/integer_input/integer_input.dart",
         "5": false
       }
     ],
     "5": [
       {
-        "1": "IntegerInput",
+        "1": "AppComponent",
         "6": [
-          "OnInit"
+          "OnInit",
+          "OnDestroy"
         ],
         "7": [
           {
             "2": "materialDirectives"
+          },
+          {
+            "2": "IntegerInput"
           }
         ]
       }
     ],
-    "6": "integer_input.dart",
+    "6": "app_component.dart",
     "7": [
       {
         "1": "package:angular2/core.template.dart",
@@ -43,49 +51,51 @@
         "4": "i1"
       },
       {
-        "1": "package:webworker_isolate/app_component.template.dart",
+        "1": "package:prime_finder/integer_input/integer_input.template.dart",
         "4": "i2"
       }
     ]
   },
   "type": {
-    "IntegerInput": {
+    "IntegerPair": {
+      "class": "Identifier",
+      "name": "IntegerPair",
+      "moduleUrl": "asset:prime_finder/lib/app_component.dart",
+      "prefix": null,
+      "value": null
+    },
+    "AppComponent": {
       "class": "Directive",
       "isComponent": true,
-      "selector": "integer-input",
+      "selector": "my-app",
       "exportAs": null,
       "type": {
         "class": "Type",
-        "name": "IntegerInput",
-        "moduleUrl": "asset:webworker_isolate/lib/integer_input/integer_input.dart",
+        "name": "AppComponent",
+        "moduleUrl": "asset:prime_finder/lib/app_component.dart",
         "prefix": null,
         "isHost": false,
         "value": null,
         "diDeps": []
       },
       "changeDetection": 6,
-      "inputs": {
-        "pair": "pair"
-      },
-      "inputTypes": {
-        "pair": " IntegerPair"
-      },
-      "outputs": {
-        "deleted": "deleted"
-      },
+      "inputs": {},
+      "inputTypes": {},
+      "outputs": {},
       "hostListeners": {},
       "hostProperties": {},
       "hostAttributes": {},
       "lifecycleHooks": [
-        0
+        0,
+        1
       ],
       "template": {
         "encapsulation": 0,
-        "template": "<material-input #number\n                [label]=\"label\"\n                type=\"number\"\n                floatingLabel\n                [error]=\"inputErrorMessage\"\n                (keyup)=\"handleChange()\"></material-input>\n\n<material-fab\n                 (trigger)=\"delete()\">\n  <glyph icon=\"delete\"></glyph>\n</material-fab>\n",
-        "templateUrl": "asset:webworker_isolate/lib/integer_input/integer_input.html",
+        "template": "<!--<h1>Find primes that include the following numbers</h1>-->\n\n<div class=\"main\">\n\n    <div class=\"panel\">\n        <h2>Inputs</h2>\n\n        <div class=\"section\">\n            <div class=\"integer-inputs\">\n                <integer-input *ngFor=\"let integerPair of numbers\"\n                               [pair]=\"integerPair\"\n                               (deleted)=\"deleteByKey($event)\">\n                </integer-input>\n            </div>\n\n            <material-button raised\n                             (trigger)=\"addInput()\">\n                Add\n            </material-button>\n        </div>\n\n        <div class=\"section\">\n            <material-button raised\n                             [disabled]=\"!isolateReady\"\n                             (trigger)=\"compute()\"\n                             class=\"red\">\n                Compute next\n            </material-button>\n\n            <material-button\n                [disabled]=\"!isolateComputing\"\n                (trigger)=\"forceStop()\">\n                Force stop\n            </material-button>\n\n        </div>\n    </div>\n\n    <div class=\"panel\">\n        <h2>Output</h2>\n\n        <p *ngIf=\"!isolateComputing && foundIntegers.isEmpty\">\n            Nothing here yet. Try computing a prime number.\n        </p>\n\n        <div class=\"section\">\n\n            <h1>\n                <span class=\"red-span\" *ngIf=\"!isolateComputing && foundIntegers.isNotEmpty\">\n                    {{ foundIntegers.first }}\n                </span>\n                <span class=\"gray-span\" *ngIf=\"isolateComputing\">\n                    {{lastResult ?? '0'}}\n                    <material-spinner *ngIf=\"isolateComputing\"></material-spinner>\n                </span>\n            </h1>\n\n            <!--<h3 *ngIf=\"previous != null\">Previous</h3>-->\n\n            <ul>\n                <li *ngFor=\"let item of previous\">\n                    {{item}}\n                </li>\n            </ul>\n\n        </div>\n    </div>\n</div>",
+        "templateUrl": "asset:prime_finder/lib/app_component.html",
         "styles": [],
         "styleUrls": [
-          "asset:webworker_isolate/lib/integer_input/integer_input.css"
+          "asset:prime_finder/lib/app_component.css"
         ],
         "ngContentSelectors": []
       },
@@ -1551,21 +1561,7 @@
       ],
       "viewProviders": [],
       "queries": [],
-      "viewQueries": [
-        {
-          "selectors": [
-            {
-              "value": "number",
-              "identifier": null,
-              "identifierIsInstance": false
-            }
-          ],
-          "descendants": true,
-          "first": true,
-          "propertyName": "inputEl",
-          "read": null
-        }
-      ]
+      "viewQueries": []
     }
   },
   "alias": {}

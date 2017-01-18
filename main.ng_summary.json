@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:webworker_isolate/app_component.dart",
+        "1": "package:prime_finder/app_component.dart",
         "5": false
       }
     ],
@@ -17,7 +17,7 @@
     "main": {
       "class": "Identifier",
       "name": "main",
-      "moduleUrl": "asset:webworker_isolate/web/main.dart",
+      "moduleUrl": "asset:prime_finder/web/main.dart",
       "prefix": null,
       "value": null
     }

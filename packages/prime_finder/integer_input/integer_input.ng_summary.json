@@ -15,7 +15,7 @@
         "5": false
       },
       {
-        "1": "package:webworker_isolate/app_component.dart",
+        "1": "package:prime_finder/app_component.dart",
         "5": false
       }
     ],
@@ -43,7 +43,7 @@
       "type": {
         "class": "Type",
         "name": "IntegerInput",
-        "moduleUrl": "asset:webworker_isolate/lib/integer_input/integer_input.dart",
+        "moduleUrl": "asset:prime_finder/lib/integer_input/integer_input.dart",
         "prefix": null,
         "isHost": false,
         "value": null,
@@ -68,10 +68,10 @@
       "template": {
         "encapsulation": 0,
         "template": "<material-input #number\n                [label]=\"label\"\n                type=\"number\"\n                floatingLabel\n                [error]=\"inputErrorMessage\"\n                (keyup)=\"handleChange()\"></material-input>\n\n<material-fab\n                 (trigger)=\"delete()\">\n  <glyph icon=\"delete\"></glyph>\n</material-fab>\n",
-        "templateUrl": "asset:webworker_isolate/lib/integer_input/integer_input.html",
+        "templateUrl": "asset:prime_finder/lib/integer_input/integer_input.html",
         "styles": [],
         "styleUrls": [
-          "asset:webworker_isolate/lib/integer_input/integer_input.css"
+          "asset:prime_finder/lib/integer_input/integer_input.css"
         ],
         "ngContentSelectors": []
       },
