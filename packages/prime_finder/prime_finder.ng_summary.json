@@ -25,7 +25,7 @@
     ],
     "5": [
       {
-        "1": "AppComponent",
+        "1": "PrimeFinder",
         "6": [
           "OnInit",
           "OnDestroy"
@@ -40,25 +40,25 @@
         ]
       }
     ],
-    "6": "app_component.dart"
+    "6": "prime_finder.dart"
   },
   "type": {
     "IntegerPair": {
       "class": "Identifier",
       "name": "IntegerPair",
-      "moduleUrl": "asset:prime_finder/lib/app_component.dart",
+      "moduleUrl": "asset:prime_finder/lib/prime_finder.dart",
       "prefix": null,
       "value": null
     },
-    "AppComponent": {
+    "PrimeFinder": {
       "class": "Directive",
       "isComponent": true,
       "selector": "my-app",
       "exportAs": null,
       "type": {
         "class": "Type",
-        "name": "AppComponent",
-        "moduleUrl": "asset:prime_finder/lib/app_component.dart",
+        "name": "PrimeFinder",
+        "moduleUrl": "asset:prime_finder/lib/prime_finder.dart",
         "prefix": null,
         "isHost": false,
         "value": null,
@@ -78,10 +78,10 @@
       "template": {
         "encapsulation": 0,
         "template": "<div class=\"main\">\n\n    <div class=\"panel\">\n        <h2>Inputs</h2>\n\n        <div class=\"section\">\n            <div class=\"integer-inputs\">\n                <integer-input *ngFor=\"let integerPair of numbers\"\n                               [pair]=\"integerPair\"\n                               (deleted)=\"deleteByKey($event)\"\n                               [disabled]=\"isolateComputing\">\n                </integer-input>\n            </div>\n\n            <material-button\n                             (trigger)=\"addInput()\"\n                             [disabled]=\"isolateComputing\">\n                <glyph icon=\"add\"></glyph> Add number\n            </material-button>\n        </div>\n\n        <div class=\"section\">\n            <material-button raised\n                             [disabled]=\"!isolateReady\"\n                             (trigger)=\"compute()\"\n                             class=\"red\">\n                Compute next\n            </material-button>\n\n            <material-button\n                [disabled]=\"!isolateComputing\"\n                (trigger)=\"forceStop()\">\n                Force stop\n            </material-button>\n\n        </div>\n    </div>\n\n    <div class=\"panel\">\n        <h2>Output</h2>\n\n        <p *ngIf=\"!isolateComputing && foundIntegers.isEmpty\">\n            Nothing here yet. Try computing a prime number.\n        </p>\n\n        <div class=\"section\">\n\n            <h1>\n                <span class=\"red-span\"\n                      *ngIf=\"!isolateComputing && foundIntegers.isNotEmpty\">\n                    {{ foundIntegers.first }}\n                </span>\n                <span class=\"gray-span\"\n                      *ngIf=\"isolateComputing\">\n                    {{ lastResult ?? '0' }}\n                    <material-spinner *ngIf=\"isolateComputing\"></material-spinner>\n                </span>\n            </h1>\n\n            <ul>\n                <li *ngFor=\"let item of foundIntegers\">\n                    {{ item }}\n                </li>\n            </ul>\n\n        </div>\n    </div>\n</div>",
-        "templateUrl": "asset:prime_finder/lib/app_component.html",
+        "templateUrl": "asset:prime_finder/lib/prime_finder.html",
         "styles": [],
         "styleUrls": [
-          "asset:prime_finder/lib/app_component.css"
+          "asset:prime_finder/lib/prime_finder.css"
         ],
         "ngContentSelectors": []
       },

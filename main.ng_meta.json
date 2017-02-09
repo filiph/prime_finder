@@ -7,7 +7,7 @@
         "5": false
       },
       {
-        "1": "package:prime_finder/app_component.dart",
+        "1": "package:prime_finder/prime_finder.dart",
         "5": false
       }
     ],
@@ -18,7 +18,7 @@
         "4": "i0"
       },
       {
-        "1": "package:prime_finder/app_component.template.dart",
+        "1": "package:prime_finder/prime_finder.template.dart",
         "4": "i1"
       }
     ]
