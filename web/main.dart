@@ -2,8 +2,8 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'package:angular2/platform/browser.dart';
-import 'package:prime_finder/app_component.dart';
+import 'package:prime_finder/prime_finder.dart';
 
 main() {
-  bootstrap(AppComponent);
+  bootstrap(PrimeFinder);
 }

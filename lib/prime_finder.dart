@@ -10,19 +10,17 @@ import 'package:prime_finder/integer_input/integer_input.dart';
 
 @Component(
   selector: 'my-app',
-  styleUrls: const ['app_component.css'],
-  templateUrl: 'app_component.html',
+  styleUrls: const ['prime_finder.css'],
+  templateUrl: 'prime_finder.html',
   directives: const [materialDirectives, IntegerInput],
   providers: const [materialProviders],
 )
-class AppComponent implements OnInit, OnDestroy {
+class PrimeFinder implements OnInit, OnDestroy {
   Isolate _isolate;
 
   SendPort _sendPort;
 
   String inputErrorMessage = '';
-
-  List<IntegerPair> numbers = [new IntegerPair(1, 82), new IntegerPair(2, 79)];
 
   int lastResult;
 
@@ -33,6 +31,8 @@ class AppComponent implements OnInit, OnDestroy {
   bool isolateComputing = false;
 
   Queue<int> foundIntegers = new Queue<int>();
+
+  List<IntegerPair> numbers = [new IntegerPair(1, 82), new IntegerPair(2, 79)];
 
   void addInput() {
     numbers.add(new IntegerPair(numbers.length + 1, 123));
@@ -56,17 +56,10 @@ class AppComponent implements OnInit, OnDestroy {
     recomputeKeys();
   }
 
-  bool _targetsChanged() {
-    if (_lastTargets == null) {
-      _lastTargets = _buildTargetsFingerprint();
-      return true;
+  void recomputeKeys() {
+    for (int i = 0; i < numbers.length; i++) {
+      numbers[i].key = i + 1;
     }
-    var newFingerprint = _buildTargetsFingerprint();
-    if (newFingerprint == _lastTargets) {
-      return false;
-    }
-    _lastTargets = newFingerprint;
-    return true;
   }
 
   String _buildTargetsFingerprint() =>
@@ -79,6 +72,19 @@ class AppComponent implements OnInit, OnDestroy {
   @override
   ngOnDestroy() {
     _isolate?.kill();
+  }
+
+  bool _targetsChanged() {
+    if (_lastTargets == null) {
+      _lastTargets = _buildTargetsFingerprint();
+      return true;
+    }
+    var newFingerprint = _buildTargetsFingerprint();
+    if (newFingerprint == _lastTargets) {
+      return false;
+    }
+    _lastTargets = newFingerprint;
+    return true;
   }
 
   @override
@@ -98,12 +104,6 @@ class AppComponent implements OnInit, OnDestroy {
     _isolate.addErrorListener(errorPort.sendPort);
 
     _isolate.resume(_isolate.pauseCapability);
-  }
-
-  void recomputeKeys() {
-    for (int i = 0; i < numbers.length; i++) {
-      numbers[i].key = i + 1;
-    }
   }
 
   void _handleMessage(Map<String, Object> message) {
