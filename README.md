@@ -1,12 +1,12 @@
 # Prime Finder
 
+### [RUN THE APP](https://filiph.github.io/prime_finder/)
+
 ## This valentine’s day, give a gift of a prime number
 
 Did you know that 2017 is a prime number?
 
 [![screenshot](https://filiph.github.io/prime_finder/img/screenshot.png)](https://filiph.github.io/prime_finder/)
-
-### [RUN THE APP](https://filiph.github.io/prime_finder/)
 
 ## Origin story
 
