@@ -18,7 +18,7 @@ class PrimeFinder {
 
   List<String> targets;
 
-  var _primes = <int>[];
+  final _primes = <int>[];
 
   PrimeFinder(this._sendPort) : _receivePort = new ReceivePort() {
     _receivePort.listen(_handleMessage);

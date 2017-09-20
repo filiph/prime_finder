@@ -2,8 +2,8 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
-import 'package:angular2/core.dart';
-import 'package:angular2_components/angular2_components.dart';
+import 'package:angular/core.dart';
+import 'package:angular_components/angular_components.dart';
 import 'package:prime_finder/prime_finder.dart';
 
 @Component(
@@ -13,14 +13,17 @@ import 'package:prime_finder/prime_finder.dart';
   directives: const [materialDirectives],
   providers: const [materialProviders],
 )
-class IntegerInput implements OnInit {
+class IntegerInput implements OnInit, OnDestroy {
   static final _whitespace = new RegExp(r'\s');
 
   @ViewChild('number')
   MaterialInputComponent inputEl;
 
+
+  final _deletedController = new StreamController<int>.broadcast();
+
   @Output()
-  EventEmitter<int> deleted = new EventEmitter<int>();
+  Stream<int> get deleted => _deletedController.stream;
 
   @Input()
   IntegerPair pair;
@@ -34,7 +37,7 @@ class IntegerInput implements OnInit {
 
   delete() async {
     await new Future.delayed(const Duration(milliseconds: 300));
-    deleted.add(pair.key);
+    _deletedController.add(pair.key);
   }
 
   handleChange() {
@@ -49,5 +52,10 @@ class IntegerInput implements OnInit {
   @override
   ngOnInit() {
     inputEl.inputText = '${pair.value}';
+  }
+
+  @override
+  ngOnDestroy() {
+    _deletedController.close();
   }
 }

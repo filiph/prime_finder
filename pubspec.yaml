@@ -1,19 +1,15 @@
 name: prime_finder
 description: An app that uses WebWorkers for finding prime numbers.
-version: 1.0.0
+version: 2.0.0
 environment:
-  sdk: '>=1.19.0 <2.0.0'
+  sdk: '>=1.24.0 <2.0.0'
 dependencies:
-  angular2: '>=2.2.0 <2.3.0'
-  angular2_components: '>=0.2.2 <0.3.0'
+  angular: ^4.0.0
+  angular_components: ^0.7.0
 dev_dependencies:
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
 transformers:
-- angular2:
-    platform_directives:
-    - 'package:angular2/common.dart#COMMON_DIRECTIVES'
-    platform_pipes:
-    - 'package:angular2/common.dart#COMMON_PIPES'
+- angular:
     entry_points: web/main.dart
 - dart_to_js_script_rewriter
